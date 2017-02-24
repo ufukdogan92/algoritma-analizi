@@ -1,0 +1,49 @@
+<html>
+    <head>
+
+        <title>Üs Alma</title>
+
+        
+    </head>
+<body>
+    <div id="sonuc">2^3=</div>
+    
+</body>
+
+
+<script type="text/javascript">
+
+            function us_alma(deger,us){
+                sum=1;
+                for(var i = 0;i<us;i++)
+                {
+                    sum = sum*deger;
+                }
+                return sum;
+            }
+            document.getElementById("sonuc").innerHTML= "2^3 = "+us_alma(2,3);
+
+
+            function maxSubSum(dizi){
+                var sum = 0;
+                var maxsum = 0;
+
+                for(i=0;i<dizi.length;i++){
+                    for(j=i;j<dizi.length;j++){
+                        sum = 0;
+                        for(k=i;k<=j;k++){
+                            sum = sum + dizi[k]; 
+                        }
+                        if(sum>maxsum)
+                            maxsum = sum;
+                    }
+                }
+
+                return maxsum;
+            }
+            
+            dizi=[4,-3,5,-2];
+            alert(maxSubSum(dizi));  
+
+        </script>
+</html>
