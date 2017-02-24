@@ -1,13 +1,10 @@
 <html>
     <head>
-
-        <title>Üs Alma</title>
-
-        
+        <title>Algoritma Analizi</title>
     </head>
 <body>
-    <div id="sonuc">2^3=</div>
-    
+    <div id="us_sonuc"></div>
+    <div id="maxSubSum"></div> 
 </body>
 
 
@@ -21,7 +18,7 @@
                 }
                 return sum;
             }
-            document.getElementById("sonuc").innerHTML= "2^3 = "+us_alma(2,3);
+            document.getElementById("us_sonuc").innerHTML= "2^3 = "+us_alma(2,3);
 
 
             function maxSubSum(dizi){
@@ -42,8 +39,8 @@
                 return maxsum;
             }
             
-            dizi=[4,-3,5,-2];
-            alert(maxSubSum(dizi));  
+            dizi=[4,-3,5,-2]; 
+            document.getElementById("maxSubSum").innerHTML= "maxSubSum[4,-3,5,-2] => "+maxSubSum(dizi);
 
         </script>
 </html>
