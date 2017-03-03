@@ -3,22 +3,24 @@
         <title>Algoritma Analizi - Ders 2 - 03.03.17</title>
     </head>
 <body>
-    <div id="us_sonuc"></div> 
+    <div id="us_sonuc"></div>  
+    <div id="us_sonuc_step"></div> 
 </body>
 
 
 <script type="text/javascript"> 
-            function us_alma(x,n){
-
+            step = 0;
+            function us_alma(x,n){ 
+                document.getElementById("us_sonuc_step").innerHTML= "Step Sayisi: "+(++step); 
+                if(n==1) return x; 
                 if(n==0) return 1;
-                if(n==1) return x;
                 if(n%2 == 0) {
                     return us_alma(x*x,parseInt(n/2));
                 }
                 else 
                     return us_alma(x*x,parseInt(n/2))*x;
             }
-            document.getElementById("us_sonuc").innerHTML= "2^3 = "+us_alma(2,3); 
+            document.getElementById("us_sonuc").innerHTML= "2^3 = "+us_alma(2,16); 
 
         </script>
 </html>
