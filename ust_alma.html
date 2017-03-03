@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Algoritma Analizi - Ders 2 - 03.03.17</title>
+    </head>
+<body>
+    <div id="us_sonuc"></div> 
+</body>
+
+
+<script type="text/javascript"> 
+            function us_alma(x,n){
+
+                if(n==0) return 1;
+                if(n==1) return x;
+                if(n%2 == 0) {
+                    return us_alma(x*x,parseInt(n/2));
+                }
+                else 
+                    return us_alma(x*x,parseInt(n/2))*x;
+            }
+            document.getElementById("us_sonuc").innerHTML= "2^3 = "+us_alma(2,8); 
+
+        </script>
+</html>
