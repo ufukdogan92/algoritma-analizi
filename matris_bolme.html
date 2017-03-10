@@ -28,6 +28,13 @@
                 }
             }
 
+            function max_val(a,b,c){
+                if(a>b && a>c)
+                    return a;
+                if(b>a && b>c)
+                    return b;
+                return c;
+            }
             function maxSubSum(dizi){
                 var sum = 0;
                 var maxsum = 0;
@@ -54,13 +61,12 @@
                 for(i=sayac;i>0;i--){ 
                     dizi2[sayac-i]=x[i-1]; 
                 }
-
-
                 for(i=sayac;i<x.length;i++){ 
                     dizi1[i-sayac]=x[i]; 
                 }
                 
-                maxsub = maxSubSum(dizi1)+maxSubSum(dizi2);  
+                maxsub = max_val(maxSubSum(dizi1),maxSubSum(dizi2),maxSubSum(dizi2)+maxSubSum(dizi1));  
+
                 document.getElementById("maxsub").innerHTML= "maxsub= "+maxsub;
                 matris_yazdir(dizi2);  
                 document.getElementById("sonuc").innerHTML= document.getElementById("sonuc").innerHTML+"</br>";
