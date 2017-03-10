@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Algoritma Analizi - Ders 3 - 10.03.17</title>
+    <style> 
+        body{
+            font-size: 26px;
+        }
+        div{
+            padding: 5px;
+            margin: 5px;
+            background: #CCC;
+            width: 200px;
+        }
+    </style>
+    </head>
+    
+<body>
+    <div id="sonuc"></div> 
+    <div id="maxsub"></div>  
+</body>
+
+
+<script type="text/javascript"> 
+            step = 0;
+            function matris_yazdir(x){ 
+                for(i=0;i<x.length;i++){
+                       document.getElementById("sonuc").innerHTML= document.getElementById("sonuc").innerHTML+" "+ x[i];
+                }
+            }
+
+            function maxSubSum(dizi){
+                var sum = 0;
+                var maxsum = 0;
+
+                for(i=0;i<dizi.length;i++){
+                    for(j=i;j<dizi.length;j++){
+                        sum = 0;
+                        for(k=i;k<=j;k++){
+                            sum = sum + dizi[k]; 
+                        }
+                        if(sum>maxsum)
+                            maxsum = sum;
+                    }
+                }
+
+                return maxsum;
+            }
+
+            function matris_bol(x){
+                sayac = parseInt(x.length/2); 
+                var dizi2=[];
+                var dizi1=[];
+
+                for(i=sayac;i>0;i--){ 
+                    dizi2[sayac-i]=x[i-1]; 
+                }
+
+
+                for(i=sayac;i<x.length;i++){ 
+                    dizi1[i-sayac]=x[i]; 
+                }
+                
+                maxsub = maxSubSum(dizi1)+maxSubSum(dizi2);  
+                document.getElementById("maxsub").innerHTML= "maxsub= "+maxsub;
+                matris_yazdir(dizi2);  
+                document.getElementById("sonuc").innerHTML= document.getElementById("sonuc").innerHTML+"</br>";
+                matris_yazdir(dizi1);
+            }
+            dizi = [4,-3,2,1,6,-1,-2,4];
+            matris_bol(dizi);
+
+        </script>
+</html>
